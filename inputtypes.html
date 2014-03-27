@@ -2,19 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>HTML5 boilerplate – all you really need…</title>
+    <title>Input Types</title>
 </head>
 
 <body id="home">
 
-    <h1>HTML5 boilerplate</h1>
+    <h1>Input Types</h1>
+
+	<p>
+	Browser can support:
+	</p>
+	<ul>
+		<li>mandatory</li>
+		<li>max length</li>
+		<li>min/max</li>
+		<li>auto complete (use name to separate values)</li>
+	</ul>
 
 	<form>
-		<input type="text" name="textField" required autocomplete="on"/>
+		Text: <input type="text" name="textField" required autocomplete="on"/>
 		<br/>
-		<input type="date" name="dateField" autocomplete="on"/>
+		Another Text: <input type="text" name="textField2" autocomplete="on"/>
 		<br/>
-		<input type="time" name="timeField" autocomplete="on"/>
+		Number (Integers): <input type="number" name="wholeNumberField" autocomplete="on" 
+			max="10" placeholder="<=10"/>
+		<br/>
+		Number (Any): <input type="number" name="anyNumberField" autocomplete="on" step="any"/>
+		<br/>
+		Number (0.1 step): <input type="number" name="anyNumberField" autocomplete="on" step="0.1"/>
+		<br/>
+		Number (0.01 step): <input type="number" name="anyNumberField" autocomplete="on" step="0.01"/>
+		<br/>
+		Date: <input type="date" name="dateField" autocomplete="on"/>
+		<br/>
+		Time: <input type="time" name="timeField" autocomplete="on"/>
+		<br/>
+		<label>Homepage: <input name=hp type=url list=hpurls></label>
+		<datalist id=hpurls>
+			<option value="http://www.google.com/" label="Google">
+			<option value="http://www.reddit.com/" label="Reddit">
+		</datalist>
 		<br/>
 		<input type="submit"/>
 	</form>

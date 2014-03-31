@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Auto Complete</title>
+</head>
+
+<body id="home">
+
+    <h1>Auto Complete</h1>
+
+	<p>Form with auto complete on:</p>
+
+	<form autocomplete="on">
+		<label>Auto complete on: <input type="text" name="textField1" autocomplete="on"/></label>
+		<br/>
+		<label>Auto complete off: <input type="text" name="textField2" autocomplete="off"/></label>
+		<br/>
+		<input type="submit"/>
+	</form>
+
+	<p>Form with auto complete off (same field names as above):</p>
+
+	<form autocomplete="off">
+		<label>Auto complete on: <input type="text" name="textField1" autocomplete="on"/></label>
+		<br/>
+		<label>Auto complete off: <input type="text" name="textField2" autocomplete="off"/></label>
+		<br/>
+		<input type="submit"/>
+	</form>
+
+	<p>Form with auto complete off (different field names than first form):</p>
+
+	<form autocomplete="off">
+		<label>Auto complete on: <input type="text" name="textField3" autocomplete="on"/></label>
+		<br/>
+		<label>Auto complete off: <input type="text" name="textField4" autocomplete="off"/></label>
+		<br/>
+		<input type="submit"/>
+	</form>
+
+	<p>For Chrome, data is stored in SQLLite database 
+	(see <a href="http://superuser.com/a/224318">Google Chrome view saved form data</a>) 
+	in the <tt>autofill</tt> table.</p>
+
+</body>
+</html>
+

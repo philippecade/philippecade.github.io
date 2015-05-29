@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>User Media</title>
+</head>
+
+<body id="home">
+
+	<p>From <a href="http://www.html5rocks.com/en/tutorials/getusermedia/intro/">Capturing Audio & Video in HTML5</a></p>
+
+    <h1>User Media</h1>
+
+	<h2>HTML Media Capture</h2>
+
+	<input type="file" accept="image/*;capture=camera"/>
+
+	<h2>Javascript getUserMedia</h2>
+
+	<video autoplay></video>
+
+	<script>
+		function hasGetUserMedia() {
+			return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
+			navigator.mozGetUserMedia || navigator.msGetUserMedia);
+		}
+
+		if (hasGetUserMedia()) {
+			// Good to go!
+			console.log('getUserMedia detected');
+			var errorCallback = function(e) {
+				console.log('Rejected!', e);
+			};
+			// Webkit example only
+			navigator.webkitGetUserMedia({video: true, audio: true}, function(localMediaStream) {
+				var video = document.querySelector('video');
+				video.src = window.URL.createObjectURL(localMediaStream);
+
+				// Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
+				// See crbug.com/110938.
+				video.onloadedmetadata = function(e) {
+					// Ready to go. Do some stuff.
+					console.log('Got something', e);
+				};
+			}, errorCallback);
+		} else {
+			alert('getUserMedia() is not supported in your browser');
+		}
+	</script>
+
+	<h1>Notes</h1>
+
+	Very poor support yet: <a href="http://caniuse.com/#feat=stream">caniuse.com</a>
+
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Geolocation</title>
+</head>
+
+<body id="home">
+
+    <h1>Geolocation</h1>
+
+	<script>
+		navigator.geolocation.getCurrentPosition(GetLocation);
+		function GetLocation(location) {
+			alert(location.coords.latitude);
+			alert(location.coords.longitude);
+			alert(location.coords.accuracy);
+		}
+	</script>
+
+	<h1>Notes</h1>
+	
+
+</body>
+</html>
+
